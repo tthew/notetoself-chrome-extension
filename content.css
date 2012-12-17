@@ -1,0 +1,46 @@
+span.highlight { background-color: yellow !important; color: #000 !important; display: inline !important;}
+a.highlight {background-color: yellow !important; color: #000 !important;}
+
+.nts-feed {
+	font-family: Georgia, times, serif;
+	letter-spacing: 1px; padding: 0; margin: 0;
+}
+
+.nts-feed .nts-notes ul {
+	padding: 0; margin: 0;
+}
+
+.nts-feed .nts-notes li {
+	background: #eee; list-style: none;
+	padding: 1em; margin: 1em;
+}
+
+.nts-feed h1 {
+	font-size: 1.2em;
+	padding-top: 0.5em; margin-left: 0em; padding-left: 1.2em; padding-bottom: 0.5em;
+	border-bottom: 1px solid #ccc; font-variant: small-caps; letter-spacing: 2px;
+	background: #000; color: #fff; font-weight: normal;
+}
+
+.nts-feed h2 {
+	font-size: 1.2em; font-style: small-caps;
+	margin-bottom: 0px; padding-bottom: 0;
+} 
+
+.nts-feed h2 + p {
+	margin-top: 5px; font-size: 12px;
+}
+
+.nts-feed a:link,
+.nts-feed a:visited {
+	color: blue; text-decoration: none;
+}
+
+.nts-feed a:hover,
+.nts-feed a:active {
+}
+
+.nts-feed h2 a:link,
+.nts-feed h2 a:visited {
+	color: #000;
+}

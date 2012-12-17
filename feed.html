@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="content.css" />
+	<script src="jquery.js"></script>	
+	<script src="lodash.js"></script>
+	<script src="feed.js"></script>
+
+</head>
+<body class="nts-feed">
+<h1><em>Note To Self&hellip;</em></h1>
+<section class="nts-notes">
+</section>	
+<script id="nts-tmpl-feedItem" type="text/html">
+
+<% if (feed.length > 0) { %>
+<ul>	
+<% _.each(feed, function(item) { %>
+	<li>
+	<h2><a href="<%= item.pageUrl %>"><%= item.title %></a></h2>
+	<p><a href="<%= item.pageUrl %>"><%= item.pageUrl %></a></p>
+	<% if (item.context === "context-selection") { %>
+		<p>You selected the following text: <span class="highlight"><em><%= item.selectionText %></em></span> <span class='view-inline'>(<a href="#">view inline</a>)</span></p>
+	<% } %>
+	</li>
+<% }); %>
+</ul>
+<% } else { %>
+<p><i>Nothing here</i><p>
+<% } %>
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "Note to self",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Highlight / Notate websites.",
+  "permissions": [
+      "contextMenus",
+      "tabs"
+  ],
+  "background": {
+    "scripts": ["lodash.js","background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "css": ["content.css"],
+      "js": ["jquery.js","jquery.highlight.js","lodash.js", "content.js"]
+    }
+  ],
+  "options_page": "feed.html",
+  "browser_action": {
+    "name":   "Note to self",
+    "icons": ["icon.png"]
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+
+}
