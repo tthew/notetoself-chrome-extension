@@ -14,22 +14,25 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 	padding: 0; margin: 0;
 }
 
-.nts-feed .nts-notes li {
+.nts-feed .nts-notes .nts-note {
+	
 	position: relative;
 	background: #eee; list-style: none;
 	padding: 1em; margin: 1em;
+	border-radius: 2px;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.2) ;
 }
 
-.nts-feed .nts-notes li ul.menu,
-.nts-feed .nts-notes li ul.menu li {
+.nts-feed .nts-notes .nts-note ul.menu,
+.nts-feed .nts-notes .nts-note ul.menu li {
 	display: inline; width: auto; padding: 0; margin: 0;
 }
 
-.nts-feed .nts-notes li .delete {
+.nts-feed .nts-notes .nts-note .delete {
 	display: none; position: absolute; right: 1em; top: 0;
 }
 
-.nts-feed .nts-notes li:hover .delete {
+.nts-feed .nts-notes .nts-note:hover .delete {
 	display: block;
 }
 

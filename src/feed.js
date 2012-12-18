@@ -22,10 +22,13 @@
 		});
 
 		$('.delete').live("click",function() {
+			var el = this;
 			var id = $(this).parent().data("nts-note-id");
 			chrome.extension.sendMessage({"type":"delete", "noteId": id}, function(response) {
 				if (response.type === "success") {
-					render();	
+					$(el).parent().fadeOut("slow", function() {
+						$(this).remove();
+					})
 				}
 			});
 		});
