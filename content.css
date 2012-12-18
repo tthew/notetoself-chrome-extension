@@ -31,6 +31,11 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 	margin-top: 5px; font-size: 12px;
 }
 
+.nts-feed li ul.menu,
+.nts-feed li ul.menu li {
+	display: inline; width: auto; padding: 0; margin: 0;
+}
+
 .nts-feed a:link,
 .nts-feed a:visited {
 	color: blue; text-decoration: none;

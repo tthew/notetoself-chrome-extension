@@ -14,14 +14,19 @@ var clickHandler = function(info, tab) {
 	nts.push(note);
 	localStorage["nts"] = JSON.stringify(nts);
 
+	chrome.tabs.sendMessage(tab.id, {'type':'render'})
+	// tab.sendMessage({'type':'render'});
+
 };
 
 chrome.extension.onMessage.addListener(function(msg, __, sendResponse) {
 	var nts;
 	console.log(msg);
-	if (msg.type === "lookup") {
-		nts = JSON.parse(localStorage["nts"]);
-		sendResponse(_.where(nts,{'pageUrl': msg.url}));
+	switch (msg.type) {
+		case "lookup": 
+			nts = JSON.parse(localStorage["nts"]);
+			sendResponse(_.where(nts,{'pageUrl': msg.url}));
+		break;
 	}
 });
 
