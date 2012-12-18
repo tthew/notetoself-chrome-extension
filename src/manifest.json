@@ -3,6 +3,9 @@
   "version": "1.0",
   "manifest_version": 2,
   "description": "Highlight / Notate websites.",
+  "icons": {
+    "128": "icon_128.png"
+  },
   "permissions": [
       "contextMenus",
       "tabs"
