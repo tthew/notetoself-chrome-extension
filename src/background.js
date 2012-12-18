@@ -46,7 +46,11 @@ chrome.extension.onMessage.addListener(function(msg, __, sendResponse) {
 
 var updateBadge = function() {
 	var nts = getNts();
-	chrome.browserAction.setBadgeText({"text": "" + nts.length + ""});
+	if (nts.length > 0) {
+		chrome.browserAction.setBadgeText({"text": "" + nts.length + ""});
+	} else {
+		chrome.browserAction.setBadgeText({"text":""});
+	}
 }
 
 var navigateTo = function(url) {
@@ -70,8 +74,7 @@ chrome.runtime.onInstalled.addListener(function() {
 	}
 
 	chrome.contextMenus.create({"id": "context-feed", "title": 'View my NTS', "onclick": function() {navigateTo("feed.html")}})
+});
 
-});
-});
 chrome.browserAction.setBadgeBackgroundColor({color: "#ff8000"});
 updateBadge();
