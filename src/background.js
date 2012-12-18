@@ -1,3 +1,8 @@
+
+var getNts = function() {
+	return JSON.parse(localStorage["nts"]);
+}
+
 // Generic Click Handler
 var clickHandler = function(info, tab) {
 	var note,
@@ -10,12 +15,13 @@ var clickHandler = function(info, tab) {
 	note.title = tab.title;
 	delete note.menuItemId;
 
-	nts = JSON.parse(localStorage["nts"]);
+	nts = getNts();
 	nts.push(note);
 	localStorage["nts"] = JSON.stringify(nts);
 
 	chrome.tabs.sendMessage(tab.id, {'type':'render'})
-	// tab.sendMessage({'type':'render'});
+	chrome.extension.sendMessage({'type':'render'});
+	updateBadge();
 
 };
 
@@ -34,14 +40,23 @@ chrome.extension.onMessage.addListener(function(msg, __, sendResponse) {
 
 			 localStorage.nts = JSON.stringify(notes);
 			 sendResponse({"type":"success"});
-
+			 updateBadge();
 		break;
 	}
 });
 
-var navigateTo = function() {
-	chrome.tabs.create({url:chrome.extension.getURL("feed.html")});	
+var updateBadge = function() {
+	var nts = getNts();
+	chrome.browserAction.setBadgeText({"text": "" + nts.length + ""});
 }
+
+var navigateTo = function(url) {
+	chrome.tabs.create({url:chrome.extension.getURL(url)});	
+};
+
+chrome.browserAction.onClicked.addListener(function(tab) {
+	navigateTo("feed.html");
+});
 
 // Install time set-up
 chrome.runtime.onInstalled.addListener(function() {
@@ -57,4 +72,5 @@ chrome.runtime.onInstalled.addListener(function() {
 
 	chrome.contextMenus.create({"id": "context-feed", "title": 'View my NTS', "onclick": function() {navigateTo("feed.html")}})
 });
-
+chrome.browserAction.setBadgeBackgroundColor({color: "#ff8000"});
+updateBadge();

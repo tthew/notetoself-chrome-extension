@@ -8,6 +8,12 @@
 			console.log(nts);
 		};
 
+		chrome.extension.onMessage.addListener(function(msg) {
+			if (msg.type === "render") {
+				render();
+			}
+		});
+
 		$('.delete').live("click",function() {
 			var id = $(this).parent().data("nts-note-id");
 			chrome.extension.sendMessage({"type":"delete", "noteId": id}, function(response) {

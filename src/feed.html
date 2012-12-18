@@ -20,7 +20,7 @@
 	<h2><a href="<%= item.pageUrl %>" target="_blank"><%= item.title %></a></h2>
 	<p><a href="<%= item.pageUrl %>" target="_blank"><%= item.pageUrl %></a></p>
 	<% if (item.context === "context-selection") { %>
-		<p>You selected the following text: <span class="highlight"><em><%= item.selectionText %></em></span> <ul class="menu"><li>(<a href="http://google.com/search?q=<%= encodeURIComponent(item.selectionText) %>" target="_blank">Google</a>)</li><li>(<a href="http://en.wikipedia.org/w/index.php?search=<%= encodeURIComponent(item.selectionText) %>&go=Go">Wikipedia</a>)</li></ul></p>
+		<p>You selected the following text: <span class="highlight"><em><%= item.selectionText %></em></span> <ul class="menu"><li>(<a href="http://google.com/search?q=<%= encodeURIComponent(item.selectionText) %>" target="_blank">Google</a>)</li><li>(<a href="http://en.wikipedia.org/w/index.php?search=<%= encodeURIComponent(item.selectionText) %>&go=Go" target="_blank">Wikipedia</a>)</li></ul></p>
 	<% } %>
 	<% if (item.context === "context-link") { %>
 		<p>You selected the following link: <a href="<%= item.linkUrl %>" class="link"><%= item.selectionText %></a></span></p>
@@ -39,7 +39,7 @@
 <% }); %>
 </ul>
 <% } else { %>
-<p class="nothing-here"><em>Nothing here</em><p>
+<p class="nothing-here"><em>Nothing here (Try clipping something)</em><p>
 <% } %>
 </script>
 </body>

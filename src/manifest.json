@@ -2,7 +2,8 @@
   "name": "Note to self",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Highlight / Notate websites.",
+  "description": "A web cliping / highlighting / notation tool for Google Crome",
+  "homepage_url": "http://www.lucidmoon.co.uk",
   "icons": {
     "128": "icon_128.png"
   },
@@ -23,7 +24,9 @@
   "options_page": "feed.html",
   "browser_action": {
     "name":   "Note to self",
-    "icons": ["icon.png"]
+    "default_icon": {
+      "19": "icon_19.png"
+    }
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 
