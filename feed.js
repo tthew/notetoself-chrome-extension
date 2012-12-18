@@ -5,6 +5,7 @@
 			var nts = JSON.parse(localStorage['nts']);
 			var tmpl = _.template($('#nts-tmpl-feedItem').html(),{'feed':nts.reverse()});
 			$('.nts-notes').append(tmpl);	
+			console.log(nts);
 		};
 
 		$('.delete').live("click",function() {

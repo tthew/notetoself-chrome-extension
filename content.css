@@ -62,3 +62,9 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 .nts-feed h2 a:visited {
 	color: #000;
 }
+
+
+.nts-feed a.link:link,
+.nts-feed a.link:visited {
+	text-decoration: underline;
+}
