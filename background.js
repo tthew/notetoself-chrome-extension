@@ -22,10 +22,19 @@ var clickHandler = function(info, tab) {
 chrome.extension.onMessage.addListener(function(msg, __, sendResponse) {
 	var nts;
 	console.log(msg);
+	nts = JSON.parse(localStorage["nts"]);
 	switch (msg.type) {
 		case "lookup": 
-			nts = JSON.parse(localStorage["nts"]);
 			sendResponse(_.where(nts,{'pageUrl': msg.url}));
+		break;
+		case "delete":
+			 var notes = _.reject(nts, function(note) {
+			 	return note.id === msg.noteId;
+			 });
+
+			 localStorage.nts = JSON.stringify(notes);
+			 sendResponse({"type":"success"});
+
 		break;
 	}
 });

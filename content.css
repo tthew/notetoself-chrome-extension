@@ -6,13 +6,31 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 	letter-spacing: 1px; padding: 0; margin: 0;
 }
 
+.nts-feed .nothing-here {
+	padding-left: 1.2em;
+}
+
 .nts-feed .nts-notes ul {
 	padding: 0; margin: 0;
 }
 
 .nts-feed .nts-notes li {
+	position: relative;
 	background: #eee; list-style: none;
 	padding: 1em; margin: 1em;
+}
+
+.nts-feed .nts-notes li ul.menu,
+.nts-feed .nts-notes li ul.menu li {
+	display: inline; width: auto; padding: 0; margin: 0;
+}
+
+.nts-feed .nts-notes li .delete {
+	display: none; position: absolute; right: 1em; top: 0;
+}
+
+.nts-feed .nts-notes li:hover .delete {
+	display: block;
 }
 
 .nts-feed h1 {
@@ -29,11 +47,6 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 
 .nts-feed h2 + p {
 	margin-top: 5px; font-size: 12px;
-}
-
-.nts-feed li ul.menu,
-.nts-feed li ul.menu li {
-	display: inline; width: auto; padding: 0; margin: 0;
 }
 
 .nts-feed a:link,
