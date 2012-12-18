@@ -6,17 +6,14 @@
 	}
 
 	var highlight = function(selection) {
-
 			if (selection.selectionText) {
 				// We've got selection text
 				$('body').highlight(selection.selectionText);	
 			}
-			
 			if (selection.linkUrl) {
 				// We've got a link
 				$('a[href="' + selection.linkUrl +'"]').addClass('highlight');
-			}
-			
+			}			
 	};
 
 	var lookup = function() {

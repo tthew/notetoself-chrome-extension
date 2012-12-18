@@ -27,7 +27,6 @@ var clickHandler = function(info, tab) {
 
 chrome.extension.onMessage.addListener(function(msg, __, sendResponse) {
 	var nts;
-	console.log(msg);
 	nts = JSON.parse(localStorage["nts"]);
 	switch (msg.type) {
 		case "lookup": 
@@ -71,6 +70,8 @@ chrome.runtime.onInstalled.addListener(function() {
 	}
 
 	chrome.contextMenus.create({"id": "context-feed", "title": 'View my NTS', "onclick": function() {navigateTo("feed.html")}})
+
+});
 });
 chrome.browserAction.setBadgeBackgroundColor({color: "#ff8000"});
 updateBadge();
