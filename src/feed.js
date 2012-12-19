@@ -6,8 +6,12 @@
 			return options.inverse(this);
 		});
 
+		var getNotes = function() {
+			return JSON.parse(localStorage['nts']);
+		};
+
 		var render = function() {
-			var nts = JSON.parse(localStorage['nts']);
+			var nts = getNotes();
 			var tmpl = Handlebars.compile($('#nts-tmpl-feedItem').html());
 			var html = tmpl({'feed':nts.reverse()});
 
