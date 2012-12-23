@@ -44,6 +44,10 @@ chrome.extension.onMessage.addListener(function(msg, __, sendResponse) {
 	}
 });
 
+var configureBadge = function() {
+	chrome.browserAction.setBadgeBackgroundColor({color: "#ff8000"});
+};
+
 var updateBadge = function() {
 	var nts = getNts();
 	if (nts.length > 0) {
@@ -51,7 +55,7 @@ var updateBadge = function() {
 	} else {
 		chrome.browserAction.setBadgeText({"text":""});
 	}
-}
+};
 
 var navigateTo = function(url) {
 	chrome.tabs.create({url:chrome.extension.getURL(url)});	
@@ -61,11 +65,9 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	navigateTo("feed.html");
 });
 
-// Install time set-up
-chrome.runtime.onInstalled.addListener(function() {
-	// Set up localStorage
-	if (!localStorage.nts) localStorage.nts = JSON.stringify([]);
+var setUpContextMenus = function() {
 	// Set up context menu tree
+	
 	var contexts = ["page","selection","link","editable","image","video","audio"];
 	for (var i = 0; i < contexts.length; i++) {
 	  var context = contexts[i];
@@ -74,7 +76,20 @@ chrome.runtime.onInstalled.addListener(function() {
 	}
 
 	chrome.contextMenus.create({"id": "context-feed", "title": 'View my NTS', "onclick": function() {navigateTo("feed.html")}})
+
+}
+
+// Install time set-up
+chrome.runtime.onInstalled.addListener(function() {
+	// Set up localStorage
+	if (!localStorage.nts) localStorage.nts = JSON.stringify([]);
+	setUpContextMenus();
 });
 
-chrome.browserAction.setBadgeBackgroundColor({color: "#ff8000"});
+chrome.runtime.onStartup.addListener(function() {
+	setUpContextMenus();
+});
+
+
+configureBadge();
 updateBadge();

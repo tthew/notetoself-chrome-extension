@@ -4,6 +4,7 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 .nts-feed {
 	font-family: Georgia, times, serif;
 	letter-spacing: 1px; padding: 0; margin: 0;
+
 }
 
 .nts-feed .nothing-here {
@@ -18,9 +19,22 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 	
 	position: relative;
 	background: #eee; list-style: none;
-	padding: 1em; margin: 1em;
-	border-radius: 2px;
-	box-shadow: 0px 2px 5px rgba(0,0,0,0.2) ;
+	padding: 1em 1em 1em 3em; margin: 1em;
+	border-bottom: 1px solid #ccc;    overflow:hidden;
+}
+
+.nts-feed .nts-notes .nts-note:before {
+   content:"";
+   position:absolute;
+   top:0;
+   left:0;
+   border-width:0 24px 24px 0;
+   border-style:solid;
+   border-color:#fff #fff #ccc #ccc;
+   -webkit-transform: rotate(-90deg);
+   background:#ccc;
+   box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+   display:block; width:0; /* Firefox 3.0 damage limitation */
 }
 
 .nts-feed .nts-notes .nts-note ul.menu,
@@ -71,3 +85,5 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 .nts-feed a.link:visited {
 	text-decoration: underline;
 }
+
+
