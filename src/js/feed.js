@@ -6,22 +6,9 @@
 			return options.inverse(this);
 		});
 
-		var getNotes = function() {
-			return JSON.parse(localStorage['nts']);
-		};
-
-		var render = function() {
-			var nts = getNotes();
-			var tmpl = Handlebars.compile($('#nts-tmpl-feedItem').html());
-			var html = tmpl({'feed':nts.reverse()});
-
-			$(".nts-notes").empty();
-			$('.nts-notes').append(html);	
-		};
-
 		chrome.extension.onMessage.addListener(function(msg) {
 			if (msg.type === "render") {
-				render();
+				NTS.Feed.render();
 			}
 		});
 
@@ -36,8 +23,7 @@
 				}
 			});
 		});
-
-		render();
+		NTS.Feed.render();
 	});
 	
 })();
