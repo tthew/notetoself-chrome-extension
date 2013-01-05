@@ -91,16 +91,6 @@
               var title = "Note '" + context + "' to self";
               var id = chrome.contextMenus.create({"id": "context-" + context,"title": title, "contexts":[context], "onclick": NTS.clickHandler}); 
             }
-        },
-        Feed: {
-            render: function() {
-                var notes = NTS.getNotes();
-                var tmpl = Handlebars.compile($('#nts-tmpl-feedItem').html());
-                var html = tmpl({'feed':notes.reverse()});
-
-                $(".nts-notes").empty();
-                $('.nts-notes').append(html);   
-            }
         }
     }
 })(window);
