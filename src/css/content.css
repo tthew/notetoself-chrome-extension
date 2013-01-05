@@ -2,34 +2,42 @@ span.highlight { background-color: yellow !important; color: #000 !important; di
 a.highlight {background-color: yellow !important; color: #000 !important;}
 
 .nts-feed {
-	font-family: Georgia, times, serif;
-	letter-spacing: 1px; padding: 0; margin: 0;
+    font-family: Georgia, times, serif;
+    letter-spacing: 1px; padding: 0; margin: 0;
 
 }
 
 .nts-feed .nothing-here {
-	padding-left: 1.2em;
+    padding-left: 1.2em;
 }
 
 .nts-feed .nts-notes ul {
-	padding: 0; margin: 0;
+    padding: 0; margin: 0;
+}
+
+.nts-feed .nts-notes li {
+    list-style: none; 
+}
+
+.nts-feed .nts-notes li li {
+    display: inline;
 }
 
 .nts-feed .nts-notes .nts-note {
-	
-	position: relative;
-	background: #eee; list-style: none;
-	padding: 2em; margin: 1em;
-	border: 1px solid #ddd;    overflow:hidden;
-	border-radius: 3px;
+    
+    position: relative;
+    background: #eee; list-style: none;
+    padding: 2em; margin: 1em;
+    border: 1px solid #ddd;    overflow:hidden;
+    border-radius: 3px;
 }
 
 .nts-feed .nts-notes .nts-note:hover {
-	border-color: #ccc;
+    border-color: #ccc;
 }
 
 .nts-feed .nts-notes .nts-note h2 {
-	margin: 0;
+    margin: 0;
 }
 
 /*.nts-feed .nts-notes .nts-note:before {
@@ -48,36 +56,36 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 
 .nts-feed .nts-notes .nts-note ul.menu,
 .nts-feed .nts-notes .nts-note ul.menu li {
-	display: inline; width: auto; padding: 0; margin: 0;
+    display: inline; width: auto; padding: 0; margin: 0;
 }
 
 .nts-feed .nts-notes .nts-note .delete {
-	display: none; position: absolute; right: 1em; top: 0;
+    display: none; position: absolute; right: 1em; top: 0;
 }
 
 .nts-feed .nts-notes .nts-note:hover .delete {
-	display: block;
+    display: block;
 }
 
 .nts-feed h1 {
-	font-size: 1.2em;
-	padding-top: 0.5em; margin-left: 0em; padding-left: 1.2em; padding-bottom: 0.5em;
-	border-bottom: 1px solid #ccc; font-variant: small-caps; letter-spacing: 2px;
-	background: #000; color: #fff; font-weight: normal;
+    font-size: 1.2em;
+    padding-top: 0.5em; margin-left: 0em; padding-left: 1.2em; padding-bottom: 0.5em;
+    border-bottom: 1px solid #ccc; font-variant: small-caps; letter-spacing: 2px;
+    background: #000; color: #fff; font-weight: normal;
 }
 
 .nts-feed h2 {
-	font-size: 1.2em; font-style: small-caps;
-	margin: 0px; padding-bottom: 0;
+    font-size: 1.2em; font-style: small-caps;
+    margin: 0px; padding-bottom: 0;
 } 
 
 .nts-feed h2 + p {
-	margin-top: 5px; margin-bottom: 0px; font-size: 12px;
+    margin-top: 5px; margin-bottom: 0px; font-size: 12px;
 }
 
 .nts-feed a:link,
 .nts-feed a:visited {
-	color: blue; text-decoration: none;
+    color: blue; text-decoration: none;
 }
 
 .nts-feed a:hover,
@@ -86,13 +94,13 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 
 .nts-feed h2 a:link,
 .nts-feed h2 a:visited {
-	color: #000;
+    color: #000;
 }
 
 
 .nts-feed a.link:link,
 .nts-feed a.link:visited {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 
