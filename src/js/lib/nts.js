@@ -17,6 +17,13 @@
 						 sendResponse({"type":"success"});
 						 NTS.updateBadge();
 					break;
+					case "createNote":
+						NTS.createNote(msg.note);
+						sendResponse({"type":"success"});
+					break;
+					case "updateBadge":
+						NTS.updateBadge();
+					break;
 				}
 			});
 
@@ -39,23 +46,20 @@
 			return JSON.parse(localStorage["nts"]);
 		},
 		clickHandler: function (info, tab) {
-			var note,
-				nts,
-				now = new Date();
-
-			note = info;
-			note.context = info.menuItemId;
-			note.id = now.getTime();
-			note.title = tab.title;
-			delete note.menuItemId;
-
-			nts = NTS.getNotes();
-			nts.push(note);
-			localStorage["nts"] = JSON.stringify(nts);
-
+			NTS.createNote(_.extend({title: tab.title, context: info.menuItemId}, info));
 			chrome.tabs.sendMessage(tab.id, {'type':'render'})
 			chrome.extension.sendMessage({'type':'render'});
 			NTS.updateBadge();
+		},
+		createNote: function(note) {
+			var notes,
+				now = new Date();
+
+			note.id = now.getTime();
+			notes = NTS.getNotes();
+			notes.push(note);
+			localStorage["nts"] = JSON.stringify(notes);
+
 		},
 		configureBadge: function () {
 			chrome.browserAction.setBadgeBackgroundColor({color: "#ff8000"});
