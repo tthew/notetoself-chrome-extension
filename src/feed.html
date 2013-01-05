@@ -1,41 +1,43 @@
 <html>
 <head>
-	<title>NTS</title>
-	<link rel="stylesheet" type="text/css" href="content.css" />
-	<script src="jquery.js"></script>	
-	<script src="lodash.js"></script>
-	<script src="handlebars.js"></script>	
-	<script src="feed.js"></script>
+    <title>NTS</title>
+    <link rel="stylesheet" type="text/css" href="css/content.css" />
+    <script src="js/lib/jquery.js"></script>    
+    <script src="js/lib/lodash.js"></script>
+    <script src="js/lib/handlebars.js"></script>
+    <script src="js/lib/nts.js"></script>
+    <script src="js/lib/nts.feed.js"></script>
+    <script src="js/feed.js"></script>
 
 </head>
 <body class="nts-feed">
 <h1><em>Note To Self&hellip;</em></h1>
 <section class="nts-notes">
-</section>	
+</section>  
 <script id="nts-tmpl-feedItem" type="text/x-handlebars-template">
 {{#if feed.length}}
-<ul>	
+<ul>    
 {{#each feed}}
-	<li class="nts-note" data-nts-note-id="{{this.id}}">
-	<h2><a href="{{this.pageUrl}}" target="_blank">{{this.title}}</a></h2>
-	<p><a href="{{this.pageUrl}}" target="_blank">{{this.pageUrl}}</a></p>
-	{{#if_eq this.context compare="context-selection"}}
-		<p>You selected the following text: <span class="highlight"><em>{{this.selectionText }}</em></span> <ul class="menu"><li>(<a href="http://google.com/search?q={{this.selectionText}}" target="_blank">Google</a>)</li><li>(<a href="http://en.wikipedia.org/w/index.php?search={{this.selectionText}}&go=Go" target="_blank">Wikipedia</a>)</li></ul></p>
-	{{/if_eq}}
-	{{#if_eq this.context compare="context-link"}}
-		<p>You selected the following link: <a href="{{this.linkUrl}}" target="_blank" class="link">{{this.selectionText}}</a></span></p>
-	{{/if_eq}}
-	{{#if_eq this.context compare="context-image"}}
-		<p><a href="{{this.pageUrl}}" target="_blank"><img src="{{this.srcUrl}}" alt="{{this.title}}" /></a></p>
-	{{/if_eq}}
-	{{#if_eq this.context compare="context-video"}}
-		<p><video controls><source src="{{this.srcUrl}}"></video></p>
-	{{/if_eq}}
-	{{#if_eq this.context compare="context-audio"}}
-		<p><audio controls><source src="{{item.srcUrl}}"></audio></p>
-	{{/if_eq}}	
-	<p class="delete"><a href="#">[x]</a></p>
-	</li>
+    <li class="nts-note" data-nts-note-id="{{this.id}}">
+    <h2><a href="{{this.pageUrl}}" target="_blank">{{this.title}}</a></h2>
+    <p><a href="{{this.pageUrl}}" target="_blank">{{this.pageUrl}}</a></p>
+    {{#if_eq this.context compare="context-selection"}}
+        <p>You selected the following text: <span class="highlight"><em>{{this.selectionText }}</em></span> <ul class="menu"><li>(<a href="http://google.com/search?q={{this.selectionText}}" target="_blank">Google</a>)</li><li>(<a href="http://en.wikipedia.org/w/index.php?search={{this.selectionText}}&go=Go" target="_blank">Wikipedia</a>)</li></ul></p>
+    {{/if_eq}}
+    {{#if_eq this.context compare="context-link"}}
+        <p>You selected the following link: <a href="{{this.linkUrl}}" target="_blank" class="link">{{this.selectionText}}</a></span></p>
+    {{/if_eq}}
+    {{#if_eq this.context compare="context-image"}}
+        <p><a href="{{this.pageUrl}}" target="_blank"><img src="{{this.srcUrl}}" alt="{{this.title}}" /></a></p>
+    {{/if_eq}}
+    {{#if_eq this.context compare="context-video"}}
+        <p><video controls><source src="{{this.srcUrl}}"></video></p>
+    {{/if_eq}}
+    {{#if_eq this.context compare="context-audio"}}
+        <p><audio controls><source src="{{item.srcUrl}}"></audio></p>
+    {{/if_eq}}  
+    <p class="delete"><a href="#">[x]</a></p>
+    </li>
 {{/each}}
 </ul>
 {{else}}

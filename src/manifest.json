@@ -1,6 +1,6 @@
 {
   "name": "Note To Self (NTS)",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "manifest_version": 2,
   "description": "A simple web cliping / highlighting / notation tool for Google Chrome",
   "homepage_url": "http://www.lucidmoon.co.uk",
@@ -12,13 +12,13 @@
       "tabs"
   ],
   "background": {
-    "scripts": ["lodash.js","background.js"]
+    "scripts": ["js/lib/lodash.js","js/lib/nts.js","js/background.js"]
   },
   "content_scripts": [
     {
       "matches": ["http://*/*","https://*/*"],
-      "css": ["content.css"],
-      "js": ["jquery.js","jquery.highlight.js","lodash.js", "content.js"]
+      "css": ["css/content.css"],
+      "js": ["js/lib/jquery.js","js/lib/jquery.highlight.js","js/lib/lodash.js", "js/lib/nts.content.js", "js/content.js"]
     }
   ],
   "options_page": "feed.html",
