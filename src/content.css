@@ -19,11 +19,20 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 	
 	position: relative;
 	background: #eee; list-style: none;
-	padding: 1em 1em 1em 3em; margin: 1em;
-	border-bottom: 1px solid #ccc;    overflow:hidden;
+	padding: 2em; margin: 1em;
+	border: 1px solid #ddd;    overflow:hidden;
+	border-radius: 3px;
 }
 
-.nts-feed .nts-notes .nts-note:before {
+.nts-feed .nts-notes .nts-note:hover {
+	border-color: #ccc;
+}
+
+.nts-feed .nts-notes .nts-note h2 {
+	margin: 0;
+}
+
+/*.nts-feed .nts-notes .nts-note:before {
    content:"";
    position:absolute;
    top:0;
@@ -35,7 +44,7 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
    background:#ccc;
    box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
    display:block; width:0; /* Firefox 3.0 damage limitation */
-}
+}*/
 
 .nts-feed .nts-notes .nts-note ul.menu,
 .nts-feed .nts-notes .nts-note ul.menu li {
@@ -59,11 +68,11 @@ a.highlight {background-color: yellow !important; color: #000 !important;}
 
 .nts-feed h2 {
 	font-size: 1.2em; font-style: small-caps;
-	margin-bottom: 0px; padding-bottom: 0;
+	margin: 0px; padding-bottom: 0;
 } 
 
 .nts-feed h2 + p {
-	margin-top: 5px; font-size: 12px;
+	margin-top: 5px; margin-bottom: 0px; font-size: 12px;
 }
 
 .nts-feed a:link,
