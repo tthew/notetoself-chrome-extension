@@ -1,5 +1,6 @@
-span.highlight { background-color: yellow !important; color: #000 !important; display: inline !important;}
-a.highlight {background-color: yellow !important; color: #000 !important;}
+.highlight { background-color: yellow !important; color: #000 !important;};
+span.highlight {display: inline !important;}
+
 
 body {
   background: #B4B7BF;
@@ -46,7 +47,11 @@ body {
 }
 
 
+.nts-feed .nts-notes .nts-note blockquote {
+  
+  display: block; font-style: italic;
 
+}
 
 
 .nts-feed .nts-notes .nts-note ul.menu,

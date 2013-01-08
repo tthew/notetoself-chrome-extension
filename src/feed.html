@@ -25,7 +25,9 @@
     <p>{{this.date}} | <a href="{{this.pageUrl}}" target="_blank">{{this.pageUrl}}</a></p>
     <p></p>
     {{#if_eq this.context compare="context-selection"}}
-        <p>You selected the following text: <span class="highlight"><em>{{this.selectionText }}</em></span> <ul class="menu"><li>(<a href="http://google.com/search?q={{this.selectionText}}" target="_blank">Google</a>)</li><li>(<a href="http://en.wikipedia.org/w/index.php?search={{this.selectionText}}&go=Go" target="_blank">Wikipedia</a>)</li></ul></p>
+        <p>You selected the following text:</p>
+        <blockquote class="highlight">{{this.selectionText }}</blockquote> 
+        <p><ul class="menu"><li>(<a href="http://google.com/search?q={{this.selectionText}}" target="_blank">Google</a>)</li><li>(<a href="http://en.wikipedia.org/w/index.php?search={{this.selectionText}}&go=Go" target="_blank">Wikipedia</a>)</li></ul></p>
     {{/if_eq}}
     {{#if_eq this.context compare="context-link"}}
         <p>You selected the following link: <a href="{{this.linkUrl}}" target="_blank" class="link">{{this.selectionText}}</a></span></p>
