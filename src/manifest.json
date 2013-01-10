@@ -12,13 +12,27 @@
       "tabs"
   ],
   "background": {
-    "scripts": ["js/lib/lodash.js","js/lib/nts.js","js/background.js"]
+    "scripts": [
+      "js/lib/jquery.js",
+      "js/lib/lodash.js",
+      "js/lib/backbone.js",
+      "js/lib/nts.js",
+      "js/models/note.js",
+      "js/collections/notes.js",
+      "js/background.js"
+    ]
   },
   "content_scripts": [
     {
       "matches": ["http://*/*","https://*/*"],
       "css": ["css/content.css"],
-      "js": ["js/lib/jquery.js","js/lib/jquery.highlight.js","js/lib/lodash.js", "js/lib/nts.content.js", "js/content.js"]
+      "js": [
+        "js/lib/jquery.js",
+        "js/lib/jquery.highlight.js",
+        "js/lib/lodash.js", 
+        "js/lib/nts.content.js", 
+        "js/content.js"
+      ]
     }
   ],
   "options_page": "feed.html",

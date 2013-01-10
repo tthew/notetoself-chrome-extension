@@ -1,21 +1,31 @@
-(function (window) {
-    if (!window.NTS)
-        window.NTS = {};
 
-    if (!window.NTS.Feed) {
+    if (!NTS)
+        var NTS = {};
+
+    if (!NTS.Feed) {
         window.NTS.Feed = {
             render: function() {
-                var notes = NTS.getNotes();
-               
-                _.each(notes, function(note) {
-                    note.date = new Date(note.id);
-                });
-                var tmpl = Handlebars.compile($('#nts-tmpl-feedItem').html());
-                var html = tmpl({'feed':notes.reverse()});
+                var notes = new NTS.Collections.Notes();
+                var tmpl = Handlebars.compile($('#nts-tmpl-feed').html());
+                var html;
+                var view;
+                notes.fetch({
+                    success: function () {
+                        // console.log(notes);
+                        var html, view, notesView;
 
-                $(".nts-notes").empty();
-                $('.nts-notes').append(html);   
+                        notesView = new NTS.Views.Notes({
+                            collection: notes,
+                            template: tmpl
+                        });
+
+                        notesView.render();
+
+                        // html = tmpl(views);
+                        // $('.nts-notes').append(notesView.el);   
+                    }
+                });
             }
         };
     }
-})(window);
+

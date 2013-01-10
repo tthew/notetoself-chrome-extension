@@ -4,8 +4,13 @@
     <link rel="stylesheet" type="text/css" href="css/content.css" />
     <script src="js/lib/jquery.js"></script>    
     <script src="js/lib/lodash.js"></script>
+    <script src="js/lib/backbone.js"></script>    
     <script src="js/lib/handlebars.js"></script>
     <script src="js/lib/nts.js"></script>
+    <script src="js/models/note.js"></script>
+    <script src="js/collections/notes.js"></script>
+    <script src="js/views/note.js"></script>
+    <script src="js/views/notes.js"></script>
     <script src="js/lib/nts.feed.js"></script>
     <script src="js/feed.js"></script>
 
@@ -14,15 +19,34 @@
 <!-- <h1><em>Note To Self&hellip;</em></h1> -->
 <section class="nts-notes">
 </section>  
-<script id="nts-tmpl-feedItem" type="text/x-handlebars-template">
+<script id="nts-tmpl-feedItem-context-page" type="text/x-handlebars-template">
+    <li class="nts-note" data-nts-note-id="{{id}}">
+    <h3><a href="{{pageUrl}}" target="_blank">{{title}}</a></h3>
+    <p>{{dateCreated}} | <a href="{{pageUrl}}" target="_blank">{{pageUrl}}</a></p>
+    <p></p>
+    <p class="delete"><a href="#">[x]</a></p>
+    </li>
 
-{{#if feed.length}}
+</script>
+<script id="nts-tmpl-feed" type="text/x-handlebars-template">
+
+{{#if notes}}
 <h2>My Notes</h2>
 <ul>    
-{{#each feed}}
+{{feed notes}}
+</ul>
+{{else}}
+<p class="nothing-here"><em>Nothing here? (Try 'right clicking' on any webpage, link, image, HTML5 video or audio&hellip;)</em><p>
+{{/if}}
+</script>
+</body>
+</html>
+
+
+<!-- {{#each feed}}
     <li class="nts-note" data-nts-note-id="{{this.id}}">
     <h3><a href="{{this.pageUrl}}" target="_blank">{{this.title}}</a></h3>
-    <p>{{this.date}} | <a href="{{this.pageUrl}}" target="_blank">{{this.pageUrl}}</a></p>
+    <p>{{this.dateCreated}} | <a href="{{this.pageUrl}}" target="_blank">{{this.pageUrl}}</a></p>
     <p></p>
     {{#if_eq this.context compare="context-selection"}}
         <p>You selected the following text:</p>
@@ -43,11 +67,4 @@
     {{/if_eq}}  
     <p class="delete"><a href="#">[x]</a></p>
     </li>
-{{/each}}
-</ul>
-{{else}}
-<p class="nothing-here"><em>Nothing here? (Try 'right clicking' on any webpage, link, image, HTML5 video or audio&hellip;)</em><p>
-{{/if}}
-</script>
-</body>
-</html>
+{{/each}} -->
