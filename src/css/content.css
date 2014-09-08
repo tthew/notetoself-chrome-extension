@@ -1,54 +1,52 @@
-.highlight { background-color: yellow !important; color: #000 !important;};
-span.highlight {display: inline !important;}
+.nts-content .highlight, .nts-feed .hightlight { background-color: yellow !important; color: #000 !important;};
+.nts-content span.highlight, .nts-feed span.hightlight {display: inline !important;}
 
-
-.nts-feed body {
+body.nts {
   background: #B4B7BF;
 }
 
 .nts-feed {
-    font-family: Georgia, times, serif;
-    letter-spacing: 1px; padding: 0.5em 0; margin: 0;
-
+  font-family: Georgia, times, serif;
+  letter-spacing: 1px; padding: 0.5em 0; margin: 0;
 }
 
 .nts-feed .nothing-here {
-    margin-top: 2em;
-    text-align: center; padding: 0 5em 0 5em;
-    font-size: 2em; color: #888; text-shadow: 1px 1px 0px #ccc; 
+  margin-top: 2em;
+  text-align: center; padding: 0 5em 0 5em;
+  font-size: 2em; color: #888; text-shadow: 1px 1px 0px #ccc; 
 }
 
 .nts-feed .nts-notes ul {
-    padding: 0; margin: 0;
+  padding: 0; margin: 0;
 }
 
 .nts-feed .nts-notes li {
-    list-style: none; margin:0;
+  list-style: none; margin:0;
 }
 
 .nts-feed .nts-notes li li {
-    display: inline;
+  display: inline;
 }
 
 .nts-feed .nts-notes .nts-note {
-    
-    position: relative;
-    background-image: -webkit-gradient(
+
+  position: relative;
+  background-image: -webkit-gradient(
   linear,
   left bottom,
   left top,
   color-stop(0.16, rgb(242,242,242)),
   color-stop(0.58, rgb(255,255,255))
-);list-style: none;
-    padding: 1.5em 1em 0.5em 2em; margin: 0 1em 6px 1em;
-    border: 1px solid #888;  overflow:hidden;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #888, 0px 0px 5px #999;
+  );list-style: none;
+  padding: 1.5em 1em 0.5em 2em; margin: 0 1em 6px 1em;
+  border: 1px solid #888;  overflow:hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #888, 0px 0px 5px #999;
 }
 
 
 .nts-feed .nts-notes .nts-note blockquote {
-  
+
   display: block; font-style: italic;
 
 }
@@ -56,36 +54,36 @@ span.highlight {display: inline !important;}
 
 .nts-feed .nts-notes .nts-note ul.menu,
 .nts-feed .nts-notes .nts-note ul.menu li {
-    display: inline; width: auto; padding: 0; margin: 0;
+  display: inline; width: auto; padding: 0; margin: 0;
 }
 
 .nts-feed .nts-notes .nts-note .delete {
-    display: none; position: absolute; right: 15px; top: 0;
+  display: none; position: absolute; right: 15px; top: 0;
 }
 
 .nts-feed .nts-notes .nts-note:hover .delete {
-    display: block; text-indent: -999999px;
-    width: 16px; height: 16px;
-    background: url(../img/ic_delete.png) scroll no-repeat 0 0;
-    cursor: pointer;
-    opacity: 0.3;
+  display: block; text-indent: -999999px;
+  width: 16px; height: 16px;
+  background: url(../img/ic_delete.png) scroll no-repeat 0 0;
+  cursor: pointer;
+  opacity: 0.3;
 }
 
 .nts-feed .nts-notes .nts-note:hover .delete:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .nts-feed h1 {
-    font-size: 1.2em;
-    padding-top: 0.5em; margin-left: 0em; padding-left: 1.2em; padding-bottom: 0.5em;
-    border-bottom: 1px solid #ccc; font-variant: small-caps; letter-spacing: 2px;
-    background: #000; color: #fff; font-weight: normal;
+  font-size: 1.2em;
+  padding-top: 0.5em; margin-left: 0em; padding-left: 1.2em; padding-bottom: 0.5em;
+  border-bottom: 1px solid #ccc; font-variant: small-caps; letter-spacing: 2px;
+  background: #000; color: #fff; font-weight: normal;
 }
 
 .nts-feed h2,
 .nts-feed h3 {
-    font-size: 1.2em; font-style: small-caps;
-    margin: 0px; padding-bottom: 0;
+  font-size: 1.2em; font-style: small-caps;
+  margin: 0px; padding-bottom: 0;
 } 
 
 .nts-feed h3 {
@@ -104,12 +102,12 @@ span.highlight {display: inline !important;}
 }
 
 .nts-feed h3 + p {
-    margin-top: 5px; margin-bottom: 0px; font-size: 12px; color: #777;
+  margin-top: 5px; margin-bottom: 0px; font-size: 12px; color: #777;
 }
 
 .nts-feed a:link,
 .nts-feed a:visited {
-    color: blue; text-decoration: none;
+  color: blue; text-decoration: none;
 }
 
 .nts-feed a:hover,
@@ -118,13 +116,13 @@ span.highlight {display: inline !important;}
 
 .nts-feed h2 a:link,
 .nts-feed h2 a:visited {
-    color: #000;
+  color: #000;
 }
 
 
 .nts-feed a.link:link,
 .nts-feed a.link:visited {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 
