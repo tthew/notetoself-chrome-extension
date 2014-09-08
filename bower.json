@@ -1,0 +1,17 @@
+{
+  "name": "notetoself-cloud-chrome-extension",
+  "version": "1.2.0",
+  "homepage": "https://github.com/tthew/notetoself-cloud-chrome-extension",
+  "authors": [
+    "Matt Richards <matt@lucidmoon.co.uk>"
+  ],
+  "description": "A simple web cliping / highlighting / notation tool for Google Chrome",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

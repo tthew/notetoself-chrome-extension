@@ -2,7 +2,7 @@
 <head>
     <title>NTS</title>
     <link rel="stylesheet" type="text/css" href="css/content.css" />
-    <script src="js/lib/jquery.js"></script>    
+    <script src="js/lib/jquery.js"></script>
     <script src="js/lib/lodash.js"></script>
     <script src="js/lib/handlebars.js"></script>
     <script src="js/lib/nts.js"></script>
@@ -10,15 +10,15 @@
     <script src="js/feed.js"></script>
 
 </head>
-<body class="nts-feed">
+<body class="nts nts-feed">
 <!-- <h1><em>Note To Self&hellip;</em></h1> -->
 <section class="nts-notes">
-</section>  
+</section>
 <script id="nts-tmpl-feedItem" type="text/x-handlebars-template">
 
 {{#if feed.length}}
 <h2>My Notes</h2>
-<ul>    
+<ul>
 {{#each feed}}
     <li class="nts-note" data-nts-note-id="{{this.id}}">
     <h3><a href="{{this.pageUrl}}" target="_blank">{{this.title}}</a></h3>
@@ -26,7 +26,7 @@
     <p></p>
     {{#if_eq this.context compare="context-selection"}}
         <p>You selected the following text:</p>
-        <blockquote class="highlight">{{this.selectionText }}</blockquote> 
+        <blockquote class="highlight">{{this.selectionText }}</blockquote>
         <p><ul class="menu"><li>(<a href="http://google.com/search?q={{this.selectionText}}" target="_blank">Google</a>)</li><li>(<a href="http://en.wikipedia.org/w/index.php?search={{this.selectionText}}&go=Go" target="_blank">Wikipedia</a>)</li></ul></p>
     {{/if_eq}}
     {{#if_eq this.context compare="context-link"}}
@@ -40,7 +40,7 @@
     {{/if_eq}}
     {{#if_eq this.context compare="context-audio"}}
         <p><audio controls><source src="{{item.srcUrl}}"></audio></p>
-    {{/if_eq}}  
+    {{/if_eq}}
     <p class="delete"><a href="#">[x]</a></p>
     </li>
 {{/each}}
